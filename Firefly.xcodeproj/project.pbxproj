@@ -14,6 +14,10 @@
 		5A707AF32C1C3C4000304680 /* FireflyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A707AF22C1C3C4000304680 /* FireflyTests.swift */; };
 		5A707AFD2C1C3C4000304680 /* FireflyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A707AFC2C1C3C4000304680 /* FireflyUITests.swift */; };
 		5A707AFF2C1C3C4000304680 /* FireflyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A707AFE2C1C3C4000304680 /* FireflyUITestsLaunchTests.swift */; };
+		5A707B0C2C1C3ED500304680 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A707B0B2C1C3ED500304680 /* GoogleService-Info.plist */; };
+		5A707B0F2C1C401200304680 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A707B0E2C1C401200304680 /* FirebaseFirestore */; };
+		5A707B122C1C426D00304680 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A707B112C1C426D00304680 /* FirebaseManager.swift */; };
+		5A707B152C1C459E00304680 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A707B142C1C459E00304680 /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,9 @@
 		5A707AF82C1C3C4000304680 /* FireflyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FireflyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A707AFC2C1C3C4000304680 /* FireflyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireflyUITests.swift; sourceTree = "<group>"; };
 		5A707AFE2C1C3C4000304680 /* FireflyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireflyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5A707B0B2C1C3ED500304680 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A707B112C1C426D00304680 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		5A707B142C1C459E00304680 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A707B0F2C1C401200304680 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +102,9 @@
 		5A707AE02C1C3C3D00304680 /* Firefly */ = {
 			isa = PBXGroup;
 			children = (
+				5A707B132C1C459100304680 /* Models */,
+				5A707B102C1C425700304680 /* Managers */,
+				5A707B0B2C1C3ED500304680 /* GoogleService-Info.plist */,
 				5A707AE12C1C3C3D00304680 /* FireflyApp.swift */,
 				5A707AE32C1C3C3D00304680 /* ContentView.swift */,
 				5A707AE52C1C3C3F00304680 /* Assets.xcassets */,
@@ -127,6 +138,22 @@
 			path = FireflyUITests;
 			sourceTree = "<group>";
 		};
+		5A707B102C1C425700304680 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5A707B112C1C426D00304680 /* FirebaseManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		5A707B132C1C459100304680 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A707B142C1C459E00304680 /* Todo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +170,9 @@
 			dependencies = (
 			);
 			name = Firefly;
+			packageProductDependencies = (
+				5A707B0E2C1C401200304680 /* FirebaseFirestore */,
+			);
 			productName = Firefly;
 			productReference = 5A707ADE2C1C3C3D00304680 /* Firefly.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +245,9 @@
 				Base,
 			);
 			mainGroup = 5A707AD52C1C3C3D00304680;
+			packageReferences = (
+				5A707B0D2C1C401200304680 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 5A707ADF2C1C3C3D00304680 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +266,7 @@
 			files = (
 				5A707AE92C1C3C3F00304680 /* Preview Assets.xcassets in Resources */,
 				5A707AE62C1C3C3F00304680 /* Assets.xcassets in Resources */,
+				5A707B0C2C1C3ED500304680 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A707B122C1C426D00304680 /* FirebaseManager.swift in Sources */,
 				5A707AE42C1C3C3D00304680 /* ContentView.swift in Sources */,
 				5A707AE22C1C3C3D00304680 /* FireflyApp.swift in Sources */,
+				5A707B152C1C459E00304680 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +618,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5A707B0D2C1C401200304680 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.27.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A707B0E2C1C401200304680 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A707B0D2C1C401200304680 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A707AD62C1C3C3D00304680 /* Project object */;
 }
